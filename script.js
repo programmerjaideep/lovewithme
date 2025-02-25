@@ -23,13 +23,32 @@ calculate_btn.onclick = () => {
     // Matching predefined conditions
     if (
         boyfriendName === "Jaideep" &&
-        ["Aastha", "Aashi", "Shruti", "Sheetal", "Simran"].includes(girlfriendName)
+        ["Deeksha", "DEEKSHA", "deeksha"].includes(girlfriendName)
     ) {
         output_section.style.top = "0"; // Show output section
         girlfriend_output.innerText = girlfriendName;
         boyfriend_output.innerText = boyfriendName;
         love_score.innerText = 10; // Fixed score for these conditions
-    } else {
+    } 
+    if (
+        boyfriendName === "jaideep" &&
+        ["Deeksha", "DEEKSHA", "deeksha"].includes(girlfriendName)
+    ) {
+        output_section.style.top = "0"; // Show output section
+        girlfriend_output.innerText = girlfriendName;
+        boyfriend_output.innerText = boyfriendName;
+        love_score.innerText = 10; // Fixed score for these conditions
+    }
+    if (
+        boyfriendName === "JAIDEEP" &&
+        ["Deeksha", "DEEKSHA", "deeksha"].includes(girlfriendName)
+    ) {
+        output_section.style.top = "0"; // Show output section
+        girlfriend_output.innerText = girlfriendName;
+        boyfriend_output.innerText = boyfriendName;
+        love_score.innerText = 10; // Fixed score for these conditions
+    }
+    else {
         // For other cases, generate a random score
         output_section.style.top = "0"; // Show output section
         girlfriend_output.innerText = girlfriendName;
@@ -37,8 +56,7 @@ calculate_btn.onclick = () => {
         music.currentTime = 0; // Reset music
         music.play(); // Play sound effect
 
-        let random_score = Math.floor(Math.random() * score_value.length) + 1;
-        love_score.innerText = random_score;
+        love_score.innerText = 0;
     }
 };
 
