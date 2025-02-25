@@ -8,56 +8,29 @@ let girlfriend_output = document.getElementById('output_girlfriend');
 let boyfriend_output = document.getElementById('output_boyfriend');
 let love_score = document.getElementById('love_score');
 
-let score_value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Fixed range of random scores
-
 // Button click event
 calculate_btn.onclick = () => {
-    let boyfriendName = boyfriend.value.trim(); // Get input value and trim whitespaces
-    let girlfriendName = girlfriend.value.trim();
+    let boyfriendName = boyfriend.value.trim().toLowerCase(); // Convert to lowercase
+    let girlfriendName = girlfriend.value.trim().toLowerCase();
 
     if (boyfriendName === "" || girlfriendName === "") {
         alert("Please enter both names!");
         return;
     }
 
-    // Matching predefined conditions
-    if (
-        boyfriendName === "Jaideep" &&
-        ["Deeksha", "DEEKSHA", "deeksha"].includes(girlfriendName)
-    ) {
-        output_section.style.top = "0"; // Show output section
-        girlfriend_output.innerText = girlfriendName;
-        boyfriend_output.innerText = boyfriendName;
-        love_score.innerText = 10; // Fixed score for these conditions
-    } 
-    if (
-        boyfriendName === "jaideep" &&
-        ["Deeksha", "DEEKSHA", "deeksha"].includes(girlfriendName)
-    ) {
-        output_section.style.top = "0"; // Show output section
-        girlfriend_output.innerText = girlfriendName;
-        boyfriend_output.innerText = boyfriendName;
-        love_score.innerText = 10; // Fixed score for these conditions
-    }
-    if (
-        boyfriendName === "JAIDEEP" &&
-        ["Deeksha", "DEEKSHA", "deeksha"].includes(girlfriendName)
-    ) {
-        output_section.style.top = "0"; // Show output section
-        girlfriend_output.innerText = girlfriendName;
-        boyfriend_output.innerText = boyfriendName;
-        love_score.innerText = 10; // Fixed score for these conditions
-    }
-    else {
-        // For other cases, generate a random score
-        output_section.style.top = "0"; // Show output section
-        girlfriend_output.innerText = girlfriendName;
-        boyfriend_output.innerText = boyfriendName;
-        music.currentTime = 0; // Reset music
-        music.play(); // Play sound effect
+    // Show output section
+    output_section.style.top = "0";
+    girlfriend_output.innerText = girlfriend.value.trim(); // Keep original casing
+    boyfriend_output.innerText = boyfriend.value.trim();
 
-        love_score.innerText = 0;
+    if (boyfriendName === "jaideep" && ["deeksha"].includes(girlfriendName)) {
+        love_score.innerText = 10; // Fixed score for predefined pair
+    } else {
+        love_score.innerText = 0; // Fixed score for all other cases
     }
+
+    music.currentTime = 0; // Reset music
+    music.play(); // Play sound effect
 };
 
 // Go back button click event
