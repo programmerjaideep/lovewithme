@@ -23,7 +23,7 @@ calculate_btn.onclick = () => {
     girlfriend_output.innerText = girlfriend.value.trim(); // Keep original casing
     boyfriend_output.innerText = boyfriend.value.trim();
 
-    if (boyfriendName === "jaideep" && ["deeksha"].includes(girlfriendName)) {
+    if (boyfriendName === "jaideep" && ["girl"].includes(girlfriendName)) {
         love_score.innerText = 10; // Fixed score for predefined pair
     } else {
         love_score.innerText = 0; // Fixed score for all other cases
