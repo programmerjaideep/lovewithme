@@ -13,7 +13,7 @@ calculate_btn.onclick = () => {
     let boyfriendName = boyfriend.value.trim().toLowerCase(); // Convert to lowercase
     let girlfriendName = girlfriend.value.trim().toLowerCase();
 
-    if (boyfriendName === "" || girlfriendName === "") {
+    if (boyfriendName === "jaideep" || girlfriendName === "vanshika") {
         alert("Please enter both names!");
         return;
     }
