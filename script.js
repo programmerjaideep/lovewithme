@@ -13,7 +13,8 @@ calculate_btn.onclick = () => {
     let boyfriendName = boyfriend.value.trim().toLowerCase(); // Convert to lowercase
     let girlfriendName = girlfriend.value.trim().toLowerCase();
 
-    if (boyfriendName === "jaideep" || girlfriendName === "vanshika") {
+    // Check if any field is empty
+    if (boyfriendName === "" || girlfriendName === "") {
         alert("Please enter both names!");
         return;
     }
@@ -23,19 +24,20 @@ calculate_btn.onclick = () => {
     girlfriend_output.innerText = girlfriend.value.trim(); // Keep original casing
     boyfriend_output.innerText = boyfriend.value.trim();
 
-    if (boyfriendName === "jaideep" && ["girl"].includes(girlfriendName)) {
-        love_score.innerText = 10; // Fixed score for predefined pair
+    // Example love score logic
+    if (boyfriendName === "jaideep" && girlfriendName === "vanshika") {
+        love_score.innerText = 100;
     } else {
-        love_score.innerText = 0; // Fixed score for all other cases
+        love_score.innerText = Math.floor(Math.random() * 100); // Random score
     }
 
-    music.currentTime = 0; // Reset music
-    music.play(); // Play sound effect
+    music.currentTime = 0;
+    music.play();
 };
 
 // Go back button click event
 go_back.onclick = () => {
-    output_section.style.top = "-100%"; // Hide output section
-    music.currentTime = 0; // Reset music
-    music.play(); // Play sound effect
+    output_section.style.top = "-100%";
+    music.currentTime = 0;
+    music.play();
 };
