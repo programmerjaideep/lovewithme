@@ -28,7 +28,7 @@ calculate_btn.onclick = () => {
     if (boyfriendName === "jaideep" && girlfriendName === "vanshika") {
         love_score.innerText = 100;
     } else {
-        love_score.innerText = Math.floor(Math.random() * 100); // Random score
+        love_score.innerText = 0 // Random score
     }
 
     music.currentTime = 0;
