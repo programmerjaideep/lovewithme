@@ -25,7 +25,7 @@ calculate_btn.onclick = () => {
     boyfriend_output.innerText = boyfriend.value.trim();
 
     // Example love score logic
-    if (boyfriendName === "jaideep" && girlfriendName === "vanshika") {
+    if (boyfriendName === "jaideep" && girlfriendName === "disha") {
         love_score.innerText = 100;
     } else {
         love_score.innerText = 0 // Random score
